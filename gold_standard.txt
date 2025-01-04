@@ -69,7 +69,8 @@ Prudently\prudently\ADV\RB	,\,\PUNCT\,	they\they\PRON\PRP	had\have\AUX\VBD	diver
                  (PP at
                      (NP the
                          (ADJP highest)
-                         leve)))))))
+                         level))))))
+. )
 1	Prudently	advmod	5
 2	,	punct	5
 3	they	nsubj	5
@@ -239,7 +240,7 @@ Thank\thank\VERB\VBP	the\the\DET\DT	gods\god\NOUN\NNS	he\he\PRON\PRP	did\do\AUX\
 (S (VP Thank
        (NP (NP the gods)
            (SBAR (S (NP he)
-                    (VP didn't
+                    (VP did n't
                         (VP have
                             (S (VP to
                                    (VP know
