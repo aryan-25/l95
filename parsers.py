@@ -51,6 +51,9 @@ class BerkeleyConstituencyParser(Parser):
         # No initialisation is needed here
         pass
 
+    def cleanup(self):
+        os.system("rm input.txt output.txt")
+
     def ptb_tokenise(self, text):
         """
         Tokenise the input text using the Penn Treebank tokeniser.
@@ -70,7 +73,10 @@ class BerkeleyConstituencyParser(Parser):
         )
 
         with open("output.txt", "r") as f:
-            return self.post_process(Tree.fromstring(f.readline()))
+            out = self.post_process(Tree.fromstring(f.readline()))
+
+        self.cleanup()
+        return out
 
     def parse_multiple(self, sentences):
         with open("input.txt", "w") as f:
@@ -82,7 +88,10 @@ class BerkeleyConstituencyParser(Parser):
         )
 
         with open("output.txt", "r") as f:
-            return [self.post_process(Tree.fromstring(line)) for line in f.readlines()]
+            out = [self.post_process(Tree.fromstring(line)) for line in f.readlines()]
+
+        self.cleanup()
+        return out
 
     def post_process(self, tree: Tree) -> Tree:
         # Remove the root node since the gold standard trees do not have it
