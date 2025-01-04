@@ -29,7 +29,11 @@ class CoreNLPConstituencyParser(Parser):
         self.parser = CoreNLPParser(url="http://localhost:9000")
 
     def parse(self, text: str) -> Tree:
-        return next(self.parser.raw_parse(text))
+        return self.post_process(next(self.parser.raw_parse(text)))
+
+    def post_process(self, tree: Tree) -> Tree:
+        # Remove the root node since the gold standard trees do not have it
+        return tree[0]
 
 
 class StanzaConstituencyParser(Parser):
@@ -37,7 +41,11 @@ class StanzaConstituencyParser(Parser):
         self.nlp = stanza.Pipeline(lang="en", processors="tokenize,pos,constituency,lemma,depparse")
 
     def parse(self, text: str) -> Tree:
-        return Tree.fromstring(str(self.nlp(text).sentences[0].constituency))
+        return self.post_process(Tree.fromstring(str(self.nlp(text).sentences[0].constituency)))
+
+    def post_process(self, tree: Tree) -> Tree:
+        # Remove the root node since the gold standard trees do not have it
+        return tree[0]
 
 
 class BerkeleyConstituencyParser(Parser):
@@ -81,12 +89,8 @@ class BerkeleyConstituencyParser(Parser):
             return [self.post_process(Tree.fromstring(line)) for line in f.readlines()]
 
     def post_process(self, tree: Tree) -> Tree:
-        """
-        The Berkeley parser does not include the ROOT node in its output.
-        This function adds the ROOT node to the tree.
-        """
-        tree.set_label("ROOT")
-        return tree
+        # Remove the root node since the gold standard trees do not have it
+        return tree[0]
 
 
 class BerkeleyNeuralConstituencyParser(Parser):
@@ -97,7 +101,11 @@ class BerkeleyNeuralConstituencyParser(Parser):
         self.parser = benepar.Parser("benepar_en3_large")
 
     def parse(self, text: str) -> Tree:
-        return self.parser.parse(text)
+        return self.post_process(self.parser.parse(text))
+
+    def post_process(self, tree: Tree) -> Tree:
+        # Remove the root node since the gold standard trees do not have it
+        return tree[0]
 
 
 class SpacyDependencyParser:
@@ -171,23 +179,24 @@ def display_parses(*parses: list[Tree]):
 def main():
     sentences = get_sentences()
 
-    # coreNLP_parses = CoreNLPConstituencyParser().parse_multiple(sentences)
+    coreNLP_parses = CoreNLPConstituencyParser().parse_multiple(sentences)
     stanza_parses = StanzaConstituencyParser().parse_multiple(sentences)
     berkeley_parses = BerkeleyConstituencyParser().parse_multiple(sentences)
-    # berkeley_neural_parses = BerkeleyNeuralConstituencyParser().parse_multiple(sentences)
+    berkeley_neural_parses = BerkeleyNeuralConstituencyParser().parse_multiple(sentences)
     gold_parses = [sentence.constituency_parse.nltk_tree for sentence in sentences]
 
     for i in range(len(sentences)):
-        matrix = score(berkeley_parses[i], stanza_parses[i], gold_parses[i])
+        matrix = score(
+            coreNLP_parses[i], stanza_parses[i], berkeley_parses[i], berkeley_neural_parses[i], gold_parses[i]
+        )
 
-        for row in matrix:
+        print(sentences[i].text)
+
+        for i, row in enumerate(matrix):
             print(row)
         print("\n")
 
-        if i == 1:
-            break
-
-    display_parses(berkeley_parses, stanza_parses, gold_parses)
+    display_parses(coreNLP_parses, stanza_parses, berkeley_parses, berkeley_neural_parses, gold_parses)
 
 
 if __name__ == "__main__":
