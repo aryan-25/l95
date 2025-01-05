@@ -1,13 +1,12 @@
 import abc
 import os
 
-import spacy
 import stanza  # type: ignore
 from nltk.parse.corenlp import CoreNLPParser  # type: ignore
 from nltk.tokenize.treebank import TreebankWordTokenizer  # type: ignore
-from nltk.tree import Tree  # type: ignore
+from nltk.tree import Tree
 
-from parse import Sentence
+from gold_standard.gold_standard_loader import Sentence
 
 
 class Parser(abc.ABC):
@@ -111,17 +110,3 @@ class BerkeleyNeuralConstituencyParser(Parser):
     def post_process(self, tree: Tree) -> Tree:
         # Remove the root node since the gold standard trees do not have it
         return tree[0]
-
-
-class SpacyDependencyParser:
-    def __init__(self):
-        self.nlp: spacy.Language = spacy.load("en_core_web_sm")
-
-    def parse(self, text: str) -> None:
-        doc = self.nlp(text)
-        for token in doc:
-            print(token.text, token.dep_, token.head.text, token.head.pos_, [child for child in token.children])
-
-    def parse_multiple(self, sentences: list[str]) -> None:
-        for sentence in sentences:
-            self.parse(sentence)

@@ -2,19 +2,20 @@ from nltk import Tree  # type: ignore
 from nltk.draw.tree import TreeWidget  # type: ignore
 from nltk.draw.util import CanvasFrame  # type: ignore
 
-
-import parse
-from evaluation import pyevalb_score
-from parsers import (
+import gold_standard.gold_standard_loader as gold_standard_loader
+from evaluation_tools.evaluation import pyevalb_score
+from parser_loader.constituency.parsers import (
     BerkeleyConstituencyParser,
     BerkeleyNeuralConstituencyParser,
     CoreNLPConstituencyParser,
     StanzaConstituencyParser,
 )
 
+from parser_loader.dependency.parsers import SpacyDependencyParser
 
-def get_sentences() -> list[parse.Sentence]:
-    return parse.parse("gold_standard.txt")
+
+def get_sentences() -> list[gold_standard_loader.Sentence]:
+    return gold_standard_loader.parse("gold_standard.txt")
 
 
 def display_parses(*parses: list[Tree]):
@@ -36,7 +37,7 @@ def display_parses(*parses: list[Tree]):
     cf.mainloop()
 
 
-def main():
+def constituency_parsers():
     sentences = get_sentences()
 
     coreNLP_parses = CoreNLPConstituencyParser().parse_multiple(sentences)
@@ -47,16 +48,37 @@ def main():
 
     for i in range(len(sentences)):
         matrix = pyevalb_score(
-            coreNLP_parses[i], stanza_parses[i], berkeley_parses[i], berkeley_neural_parses[i], gold_parses[i]
+            coreNLP_parses[i],
+            stanza_parses[i],
+            berkeley_parses[i],
+            berkeley_neural_parses[i],
+            gold_parses[i],
         )
 
         print(sentences[i].text)
-
-        for i, row in enumerate(matrix):
+        for row in matrix:
             print(row)
         print("\n")
 
-    display_parses(coreNLP_parses, stanza_parses, berkeley_parses, berkeley_neural_parses, gold_parses)
+    display_parses(
+        coreNLP_parses,
+        stanza_parses,
+        berkeley_parses,
+        berkeley_neural_parses,
+        gold_parses,
+    )
+
+
+def dependency_parsers():
+    sentences = get_sentences()
+
+    spacy_parses = SpacyDependencyParser().parse_multiple([sentence.text for sentence in sentences])
+    gold_parses = [sentence.dependency_parse for sentence in sentences]
+
+
+def main():
+    # constituency_parsers()
+    dependency_parsers()
 
 
 if __name__ == "__main__":

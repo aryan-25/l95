@@ -1,5 +1,6 @@
 import pprint
 import re
+
 from nltk.tree import Tree  # type: ignore
 
 
