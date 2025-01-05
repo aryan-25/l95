@@ -1,6 +1,12 @@
+from multiprocessing import Process
+from typing import Union
+
+import spacy
+import spacy.displacy
 from nltk import Tree  # type: ignore
 from nltk.draw.tree import TreeWidget  # type: ignore
 from nltk.draw.util import CanvasFrame  # type: ignore
+from spacy.tokens import Doc
 
 import gold_standard.gold_standard_loader as gold_standard_loader
 from evaluation_tools.evaluation import pyevalb_score
@@ -10,15 +16,14 @@ from parser_loader.constituency.parsers import (
     CoreNLPConstituencyParser,
     StanzaConstituencyParser,
 )
-
 from parser_loader.dependency.parsers import SpacyDependencyParser
 
 
 def get_sentences() -> list[gold_standard_loader.Sentence]:
-    return gold_standard_loader.parse("gold_standard.txt")
+    return gold_standard_loader.parse("gold_standard/gold_standard.txt")
 
 
-def display_parses(*parses: list[Tree]):
+def display_constituency_parses(*parses: list[Tree]):
     PADDING = 75
 
     cf = CanvasFrame(width=4000, height=4000)
@@ -35,6 +40,10 @@ def display_parses(*parses: list[Tree]):
             cf.add_widget(tree_canvas, (1000 * j) + PADDING, (300 * i) + PADDING)
 
     cf.mainloop()
+
+
+def display_dependency_parses(doc: Union[list[Doc], list[dict]], manual=False, port=8000):
+    spacy.displacy.serve(doc, style="dep", port=port, manual=manual)
 
 
 def constituency_parsers():
@@ -60,7 +69,7 @@ def constituency_parsers():
             print(row)
         print("\n")
 
-    display_parses(
+    display_constituency_parses(
         coreNLP_parses,
         stanza_parses,
         berkeley_parses,
@@ -73,7 +82,16 @@ def dependency_parsers():
     sentences = get_sentences()
 
     spacy_parses = SpacyDependencyParser().parse_multiple([sentence.text for sentence in sentences])
-    gold_parses = [sentence.dependency_parse for sentence in sentences]
+    gold_parses: list[gold_standard_loader.DependencyParse] = [sentence.dependency_parse for sentence in sentences]
+
+    gold_parse_spacy = [gold_parse.spacy_representation() for gold_parse in gold_parses]
+
+    # Display the generated parses in port 8000
+    # Run this in a separate process to avoid blocking the main process
+    Process(target=display_dependency_parses, args=(spacy_parses,)).start()
+
+    # Display the gold parses in port 8001
+    display_dependency_parses(gold_parse_spacy, manual=True, port=8001)
 
 
 def main():
