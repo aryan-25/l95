@@ -5,15 +5,16 @@
 - `gold_standard/`
     - `gold_standard.txt`:
         - This file contains the provided gold standard data.
-        - **Changes**:
-            - The typo in the token "leve" in the constituency tree of Sentence 3 was corrected to "level".
-            - A full stop node was added to the end of the constituency tree of Sentence 3 (as per the token PoS tag annotation).
-            - The node "didn't" in Sentence 10 was split into "did" and "n't" (as per the token PoS tag annotation).
+        - **Changes made to `gold_standard.txt`**:
+            - The typo in the token "leve" in the bracketed constituency tree of Sentence 3 was corrected to "level".
+            - A full stop node was added to the end of the bracketed constituency tree of Sentence 3 (as per the provided PoS tag annotation).
+            - The node "didn't" in Sentence 10 was split into "did" and "n't" (as per the provided token and PoS tag annotations).
     - `gold_standard_loader.py`
         - This file parses the gold standard data into Python objects.
         - Pre-processing constituency trees:
             - The provided constituency trees omit the PoS tags of each token.
-                - The `Sentence`'s `ConstituencyParse` object contains a function `annotate_leaves` that deepens `nltk_tree` by one level, adding the PoS tag of each leaf token as the parent node.
+                - The `Sentence`'s `ConstituencyParse` object contains a function `annotate_leaves` that deepens `nltk_tree` by one level, adding in the PoS tag of each leaf node.
+
 - `parser_loader/`
     - `constituency/`
         - `parser.py`
@@ -39,7 +40,7 @@
             ```bash
             java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -status_port 9000 -port 9000 -timeout 15000
             ```
-            This will start the CoreNLP server on port 9000, and the parser loader will connect to it to parse the gold standard sentences.
+            This will start the Stanford CoreNLP server on port 9000, and the parser loader will connect to it to parse the gold standard sentences.
 
 - `evaluation_tools/`
     - `evaluation.py`
