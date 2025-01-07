@@ -68,7 +68,7 @@ class BerkeleyConstituencyParser(Parser):
             f.write(self.ptb_tokenise(text))
 
         os.system(
-            "java -jar berkeleyparser/BerkeleyParser-1.7.jar -gr berkeleyparser/eng_sm6.gr < input.txt > output.txt"
+            "java -jar ./parser_tools/berkeleyparser/BerkeleyParser-1.7.jar -gr ./parser_tools/berkeleyparser/eng_sm6.gr < input.txt > output.txt"
         )
 
         with open("output.txt", "r") as f:
@@ -83,7 +83,7 @@ class BerkeleyConstituencyParser(Parser):
                 f.write(self.ptb_tokenise(sentence.text) + "\n")
 
         os.system(
-            "java -jar berkeleyparser/BerkeleyParser-1.7.jar -gr berkeleyparser/eng_sm6.gr < input.txt > output.txt"
+            "java -jar ./parser_tools/berkeleyparser/BerkeleyParser-1.7.jar -gr ./parser_tools/berkeleyparser/eng_sm6.gr < input.txt > output.txt"
         )
 
         with open("output.txt", "r") as f:
