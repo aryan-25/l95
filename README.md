@@ -23,6 +23,7 @@
             2. Stanford's Stanza constituency parser
             3. Berkeley's constituency parser
             4. Berkeley's Neural constituency parser (Benepar)
+            - The head `TOP`/`ROOT` nodes are removed from the generated constituency trees to match the format of the gold standard trees.
     - `dependency/`
         - `parser.py`
             - This file contains Python objects to load and parse a set of sentences from:
@@ -45,4 +46,4 @@
 - `evaluation_tools/`
     - `evaluation.py`
     This file contains code to evaluate the generated parses.
-        - [`PYEVALB`](https://pypi.org/project/PYEVALB/) is used to evaluate constituency parses.
+        - [`PYEVALB`](https://pypi.org/project/PYEVALB/), a Python implementation of [`evalb`](https://nlp.cs.nyu.edu/evalb/), is used to evaluate constituency parses.
