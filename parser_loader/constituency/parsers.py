@@ -27,7 +27,7 @@ class CoreNLPConstituencyParser(Parser):
         return self.post_process(next(self.parser.raw_parse(text)))
 
     def post_process(self, tree: Tree) -> Tree:
-        # Remove the root node since the gold standard trees do not have it
+        # Remove the `TOP` node since the gold standard trees do not have it
         return tree[0]
 
 
@@ -108,5 +108,5 @@ class BerkeleyNeuralConstituencyParser(Parser):
         return self.post_process(self.parser.parse(text))
 
     def post_process(self, tree: Tree) -> Tree:
-        # Remove the root node since the gold standard trees do not have it
+        # Remove the `ROOT` node since the gold standard trees do not have it
         return tree[0]

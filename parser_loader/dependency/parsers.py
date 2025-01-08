@@ -4,7 +4,7 @@ from spacy.tokens import Doc
 
 class SpacyDependencyParser:
     def __init__(self):
-        self.nlp: spacy.Language = spacy.load("en_core_web_sm")
+        self.nlp: spacy.Language = spacy.load("en_core_web_md")
 
     def parse(self, text: str) -> Doc:
         return self.nlp(text)
