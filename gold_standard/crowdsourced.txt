@@ -1,0 +1,45 @@
+
+11. My aunt's can opener can open a drum.
+My\my\_\PRP$	aunt\aunt\_\NN	's\'s\_\POS	can\can\_\NN	opener\opener\_\NN	can\can\_\MD	open\open\_\VB	a\a\_\DT	drum\drum\_\NN	.\.\_\.
+((S   (NP (PRP$ my) (NP (NN aunt) (NP (POS 's) (NP (NN can) (NN opener)))))   (VP (MD can) (VP (VB open) (NP (DT a) (NN drum)))))  (. .))
+
+12. The old car broke down in the car park.
+The\_\_\DT	old\_\_\JJ	car\_\_\NN	broke\_\_\VBD	down\_\_\RP	in\_\_\IN	the\_\_\DT	car\_\_\NN	park\_\_\NN	.\_\_\.
+((S (NP (DT the) (NP (ADJP (JJ old)) (NN car)))   (VP (V (VBD broke) (RP down))    (PP (IN in) (NP (DT the) (NP (NN car) (NN park))))))  (. .))
+
+13. At least two men broke in and stole my TV.
+at\_\_\RB	least\_\_\RBS	two\_\_\CD	men\_\_\NNS	broke\_\_\VBD	in\_\_\RP	and\_\_\CC	stole\_\_\VBD	my\_\_\PRP$	tv\_\_\NN	.\_\_\.
+((S (NP (ADVP (RB at)   (ADVP (RBS least) (CD two))) (NNS men))     (VP (VP (V (VBD broke) (RP in)))      (CONJP (CC and)       (VP (VBD stole) (NP (PRP$ my) (NN tv))))))  (. .))
+
+14. Kim and Sandy both broke up with their partners.
+Kim\_\_\NNP	and\_\_\CC	Sandy\_\_\NNP	both\_\_\RB	broke\_\_\VBD	up\_\_\RP	with\_\_\IN	their\_\_\PRP$	partners\_\_\NNS	.\_\_\.
+((S (NP (NP (NNP Kim)) (CONJP (CC and) (NP (NNP Sandy)))) (VP (ADVP (RB both))   (VP (V (VBD broke) (RP up))    (PP (IN with) (NP (PRP$ their) (NNS partners))))))  (. .))
+
+15. The horse as well as the rabbits which we wanted to eat has escaped.
+the\_\_\DT	horse\_\_\NN	as\_\_\RB	well\_\_\RB	as\_\_\RB	the\_\_\DT	rabbits\_\_\NNS	which\_\_\WDT	we\_\_\PRP	wanted\_\_\VBD	to\_\_\TO	eat\_\_\VB	have\_\_\VBZ	escaped\_\_\VBN	.\_\_\.
+((S   (NP (NP (DT the) (NN horse))    (CONJP (ADVP (RB as) (ADVP (RB well)) (ADVP (RB as)))       (NP (NP (DT the) (NNS rabbit))        (S (WDT which)         (S (PRP we)          (VP (VBD wanted) (VP (TO to) (VB eat))))))))   (VP (VBZ have) (VP (VBN escaped))))  (. .))
+
+16. It was my aunt's car which we sold at auction last year in February.
+it\_\_\PRP	was\_\_\VBD	my\_\_\PRP$	aunt\_\_\NN	's\_\_\POS	car\_\_\NN	which\_\_\WDT	we\_\_\PRP	sold\_\_\VBD	at\_\_\IN	auction\_\_\NN	last\_\_\RB	year\_\_\NN	in\_\_\IN	February\_\_\NNP	.\_\_\.
+((S (NP (PRP it))   (VP (VBD was)    (NP (NP (PRP$ my) (NP (NN aunt) (NP (POS 's) (NN car))))     (S (WDT which)      (S (NP (PRP we))       (VP (VP (VP (VBD sold) (PP (IN at) (NP (NN auction))))        (ADVP (RB last) (NP (NN year))))         (PP (IN in) (NP (NNP February)))))))))  (. .))
+
+17. Natural disasters – storms, flooding, hurricanes – occur infrequently but cause devastation that strains resources to breaking point.
+Natural\_\_\JJ	disasters\_\_\NNS	–\_\_\:	storms\_\_\NNS	,\_\_\,	flooding\_\_\NN	,\_\_\,	hurricanes\_\_\NNS	–\_\_\:	occur\_\_\VBP	infrequently\_\_\RB	but\_\_\CC	cause\_\_\VBP	devastation\_\_\NN	that\_\_\WDT	strains\_\_\VBZ	resources\_\_\NNS	to\_\_\IN	breaking\_\_\NN	point\_\_\NN	.\_\_\.
+((S (NP (NP (ADJP (JJ natural)) (NNS disasters)) (PRN (PRN (: –) (NP (NP (NP (NNS storms)) (LST (, ,) (NP (NN flooding)))) (LST (, ,)     (NP (NNS hurricanes))))) (: –))) (VP (VP (VP (VBP occur)) (ADVP (RB infrequently)))  (CONJP (CC but) (VP (VBP cause) (NP (NN devastation) (S (WDT that)   (VP (VP (VBZ strains)    (NP (NNS resources)))     (PP (IN to) (NP (NN breaking) (NN point))))))))))  (. .))
+
+18. Letters delivered on time by old-fashioned means are increasingly rare, so it is as well that that is not the only option available.
+Letters\_\_\NNS	delivered\_\_\VBN	on\_\_\IN	time\_\_\NN	by\_\_\IN	old\_\_\JJ	-\_\_\HYPH	fashioned\_\_\JJ	means\_\_\NNS	are\_\_\VBP	increasingly\_\_\RB	rare\_\_\JJ	,\_\_\,	so\_\_\RB	it\_\_\PRP	is\_\_\VBZ	as\_\_\RB	well\_\_\RB	that\_\_\IN	that\_\_\DT	is\_\_\VBZ	not\_\_\RB	the\_\_\DT	only\_\_\JJ	option\_\_\NN	available\_\_\JJ	.\_\_\.
+((S (NP (NP (NNS letters))   (S (VP (VP (VBN delivered) (PP (IN on) (NP (NN time))))    (PP (IN by) (NP (ADJP (ADJP (ADJP (JJ old))  (HYPH -))  (JJ fashioned)) (NNS means))))))    (VP (VBP are) (ADJP (ADVP (RB increasingly)) (JJ rare)))   (S (ADVP (, ,) (RB so))    (S (NP (PRP it))     (VP (VP (VBZ is)      (ADVP (RB as)       (ADVP (RB well))))        (S (IN that)         (S (NP (DT that))          (VP (VBZ is) (ADVP (RB not)           (NP (NP (DT the) (NP (ADJP (JJ only)) (NN option)))            (ADJP (JJ available)))))))))))  (. .))
+
+19. English also has many words of more or less unique function, including interjections (oh, ah), negatives (no, not), politeness markers (please, thank you), and the existential 'there' (there are horses but not unicorns) among others.
+English\_\_\NNP	also\_\_\RB	has\_\_\VBZ	many\_\_\JJ	words\_\_\NNS	of\_\_\IN	more\_\_\JJR	or\_\_\CC	less\_\_\JJR	unique\_\_\JJ	function\_\_\NN	,\_\_\,	including\_\_\VBG	interjections\_\_\NNS	(\_\_\-LRB-	oh\_\_\UH	,\_\_\,	ah\_\_\UH	)\_\_\-RRB-	,\_\_\,	negatives\_\_\NNS	(\_\_\-LRB-	no\_\_\RB	,\_\_\,	not\_\_\RB	)\_\_\-RRB-	,\_\_\,	politeness\_\_\NN	markers\_\_\NNS	(\_\_\-LRB-	please\_\_\UH	,\_\_\,	thank\_\_\VB	you\_\_\PRP	)\_\_\-RRB-	,\_\_\,	and\_\_\CC	the\_\_\DT	existential\_\_\JJ	'\_\_\``	there\_\_\RB	'\_\_\''	(\_\_\-LRB-	there\_\_\EX	are\_\_\VBP	horses\_\_\NNS	but\_\_\CC	not\_\_\RB	unicorns\_\_\NNS	)\_\_\-RRB-	among\_\_\IN	others\_\_\NNS	.\_\_\.
+((S (NP (NNP english))  (VP (ADVP (RB also))   (VP (VBZ has)    (NP (NP (ADJP (JJ many)) (NP (NNS words) (PP (IN of) (NP (NP (ADJP (ADJP (JJR more))     (CONJP (CC or) (ADJP (JJR less)))) (NP (ADJP (JJ unique)) (NN function))) (VP (, ,)     (VP (VP (VP (VP (VBG including) (NP (NP (NNS interjections)) (PRN (-LRB- \()      (LST (LST (UH oh) (, ,)) (UH ah)) (-RRB- \))))     (, ,) (NP (NP (NNS negatives))  (PRN (-LRB- \() (LST (LST (RB no) (, ,)) (RB not)) (-RRB- \)))) (, ,)  (NP (NP (NN politeness) (NNS markers)) (PRN (-LRB- \()  (LST (LST (UH please) (, ,)) (VP (VB thank) (NP (PRP you))))  (-RRB- \)))) (, ,)  (CONJP (CC and) (ADVP (ADVP (ADVP (DT the) (ADVP (ADJP (JJ existential)) (`` ')  (ADVP (RB there)))) ('' ')) (PRN (-LRB- \()  (S (EX there)   (VP (VBP are)    (NP (NNS horses) (CONJP (CC but) (ADVP (RB not))     (NP (NNS unicorns)))))))))  (-RRB- \)))) (PP (IN among) (NP (NNS others)))))))))))))) (. .))
+
+20. The Penn Treebank tagset was culled from the original 87-tag tagset for the Brown Corpus.
+The\_\_\DT	Penn\_\_\NNP	Treebank\_\_\NNP	tagset\_\_\NN	was\_\_\VBD	culled\_\_\VBN	from\_\_\IN	the\_\_\DT	original\_\_\JJ	87\_\_\CD	-\_\_\HYPH	tag\_\_\NN	tagset\_\_\NN	for\_\_\IN	the\_\_\DT	Brown\_\_\NNP	corpus\_\_\NNP	.\_\_\.
+((S (NP (DT the) (NP (NNP Penn) (NP (NNP Treebank) (NP (NN tagset)))))   (VP (VP (VBD was) (VBN culled))    (PP (IN from) (NP (DT the) (ADJP (JJ original) (NP (NP (CD 87)  (HYPH -))  (NP (NN tag)))) (NP (NN tagset)   (PP (IN for) (NP (DT the) (NP (NNP Brown) (NP (NNP corpus))))))))))  (. .))
+
+21. For example the original Brown and C5 tagsets include a separate tag for each of the different forms of the verbs do (e.g. C5 tag VDD for did and VDG tag for doing), be and have.
+For\_\_\IN	example\_\_\NN	the\_\_\DT	original\_\_\JJ	Brown\_\_\NNP	and\_\_\CC	c5\_\_\NNP	tagsets\_\_\NNS	include\_\_\VBP	a\_\_\DT	separate\_\_\JJ	tag\_\_\NN	for\_\_\IN	each\_\_\DT	of\_\_\IN	the\_\_\DT	different\_\_\JJ	forms\_\_\NNS	of\_\_\IN	the\_\_\DT	verbs\_\_\NNP	do\_\_\VB	(\_\_\-LRB-	e.g.\_\_\RB	c5\_\_\NNP	tag\_\_\NN	Vdd\_\_\NN	for\_\_\IN	did\_\_\VBN	and\_\_\CC	Vdg\_\_\NN	tag\_\_\NN	for\_\_\IN	doing\_\_\VBG	)\_\_\-RRB-	,\_\_\,	be\_\_\VB	and\_\_\CC	have\_\_\VB	.\_\_\.
+((S (PP (IN for)   (NP (NN example)))    (S     (NP (DT the) (ADJP (JJ original) (NP (NNP Brown)) (CONJP (CC and)      (NP (NP (NNP c5)) (NNS tagsets)))))     (VP (VBP include)      (NP (DT a) (ADJP (JJ separate) (NP (NN tag)       (PP (PP (IN for) (DT each))      (PP (IN of)       (NP (DT the) (ADJP (JJ different) (NP (NNS forms)        (PP (IN of) (NP (DT the) (NP (NNS verbs)  (LST (LST (LST (VB do) (PRN (-LRB- \()  (ADVP (ADVP (RB e.g.) (NP (NNP c5) (NP (NN tag) (NN Vdd)))  (PP (IN for) (VBN did)))  (CONJP (CC and) (NP (NN Vdg) (NN tag))   (PP (IN for) (VBG doing))))  (-RRB- \)))) (, ,) (VB be)) (CONJP (CC and) (VB have))))))))))))))))) (. .))
+
