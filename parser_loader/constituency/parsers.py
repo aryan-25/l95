@@ -102,7 +102,7 @@ class BerkeleyNeuralConstituencyParser(Parser):
         # import benepar only if we use it --- takes several seconds to load
         import benepar  # type: ignore
 
-        self.parser = benepar.Parser("benepar_en3_large")
+        self.parser = benepar.Parser("benepar_en3")
 
     def parse(self, text: str) -> Tree:
         return self.post_process(self.parser.parse(text))
