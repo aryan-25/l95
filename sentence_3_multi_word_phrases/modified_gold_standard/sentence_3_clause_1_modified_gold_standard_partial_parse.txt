@@ -1,0 +1,1 @@
+(S     (ADVP (RB Prudently))     (, ,)     (NP (PRP they))     (VP       (VBD had)       (VP         (VBN diversified)         (PP (IN into) (NP (NN banking) (CC and) (NN insurance))))))

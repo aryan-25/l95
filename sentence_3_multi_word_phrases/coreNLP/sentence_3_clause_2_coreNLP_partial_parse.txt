@@ -1,0 +1,1 @@
+(PP   (IN as)   (NP     (DT a)     (NML       (S         (VP           (VB result)           (S             (NP (PRP$ their) (NN influence))             (VP               (VBD was)               (VP                 (VBN felt)                 (PP (IN at) (NP (DT the) (JJS highest)))))))))     (NN level)))
