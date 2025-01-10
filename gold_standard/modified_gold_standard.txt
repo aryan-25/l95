@@ -7,7 +7,7 @@ As\as\SCONJ\IN	she\she\PRON\PRP	walked\walk\VERB\VBD	past\past\ADP\IN	it\it\PRON
                   (NP it)))))
    ,
    (NP (NP the driver 's)
-          glass)
+       glass)
    (VP started
         (S (VP to
                (VP open))))
@@ -57,9 +57,7 @@ Prudently\prudently\ADV\RB	,\,\PUNCT\,	they\they\PRON\PRP	had\have\AUX\VBD	diver
       (VP had
             (VP diversified
                 (PP into
-                    (NP banking)
-                    and
-                    (NP insurance)))))
+                    (NP banking and insurance)))))
    , and
    (S (PP as
           (NP a result))
