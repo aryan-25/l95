@@ -1,3 +1,5 @@
+This directory contains the results of the experiments performed in Section 5.3 titled "Pre-Processing: PoS Tags".
+
 To run the CoreNLP unlexicalised (`englishPCFG.ser.gz`) constituency parser with predefined PoS tags, use the following command:
 ```bash
 java -mx1g -cp "*" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences newline -tokenized -tagSeparator <tag_separator> -tokenizerFactory edu.stanford.nlp.process.WhitespaceTokenizer -tokenizerMethod newCoreLabelTokenizerFactory edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz <pos_tag_filename>
