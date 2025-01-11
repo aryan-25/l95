@@ -1,0 +1,11 @@
+(ROOT
+  (S
+    (NP (DT The) (JJ arranged) (NN marriage))
+    (VP (MD would)
+      (VP (VB be)
+        (NP
+          (NP (DT the) (JJ social) (NN event))
+          (PP (IN of)
+            (NP (DT the) (JJ following) (NN year))))))
+    (. .)))
+

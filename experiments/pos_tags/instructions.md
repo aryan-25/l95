@@ -4,4 +4,4 @@ java -mx1g -cp "*" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentence
 ```
 where <tag_separator> and <pos_tag_filename> are the separator used in the PoS tag file and the path to the PoS tag file, respectively.
 
-To replicate the results of Sentence 4, use the PoS tag file `4_manual_pos.txt` (located in this same directory). This file uses `/` as the separator.
+To replicate the results of Sentences 4 and 5, use the PoS tag file in `sentence_4/manual_pos.txt` and `sentence_5/manual_pos.txt` respectively. Both file use `/` as the separator.

@@ -1,0 +1,1 @@
+(S   (NP (PRP She))   (VP     (VBD sighed)     (PP       (IN at)       (NP         (NP           (NP (DT the) (NN irony))           (PP (IN of) (NP (PRP it) (DT all))))         (, ,)         (NP           (NP (DT the) (NN waste))           (PP (IN of) (NP (PRP it) (DT all)))))))   (. .))

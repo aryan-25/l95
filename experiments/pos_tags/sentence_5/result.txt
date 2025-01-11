@@ -1,0 +1,15 @@
+(ROOT
+  (S
+    (S
+      (ADVP (WHADVP When) (IN at) (RB last))
+      (NP (PRP she))
+      (VP (VBD spoke)))
+    (. ,)
+    (S
+      (NP (PRP$ her) (NNS words))
+      (VP (VBD were)
+        (ADJP (JJ heavy)
+          (CC and)
+          (JJ disjointed))))
+    (. .)))
+
