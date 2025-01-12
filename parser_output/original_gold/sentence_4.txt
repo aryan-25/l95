@@ -1,0 +1,1 @@
+(S  (NP (DT The) (VBN arranged) (NN marriage))  (VP    (MD would)    (VP      (VB be)      (NP        (NP (DT the) (JJ social) (NN event))        (PP (IN of) (NP (DT the) (ADJP (JJ following)) (NN year))))))  (. .))

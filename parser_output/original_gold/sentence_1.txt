@@ -1,0 +1,1 @@
+(S  (PP    (IN As)    (S (NP (PRP she)) (VP (VBD walked) (PP (IN past) (NP (PRP it))))))  (, ,)  (S    (NP (NP (DT the) (NN driver) (POS 's)) (NN glass))    (VP (VBD started) (S (VP (TO to) (VP (VB open))))))  (. .))

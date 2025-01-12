@@ -1,0 +1,1 @@
+(S  (VP    (VBP Thank)    (NP      (NP (DT the) (NNS gods))      (SBAR        (S          (NP (PRP he))          (VP            (VBD did)            (RB n't)            (VP              (VB have)              (S                (VP                  (TO to)                  (VP (VB know) (PP (IN of) (NP (DT this))))))))))))  (. .))
