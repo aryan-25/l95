@@ -8,4 +8,6 @@ This directory contains the results of the experiments performed in Section 5.2 
 
 The `unlexicalised_comma_inserted/` directory contains the parses and results of the experiment **where a comma was inserted after "result"**.
 
-The `lexicalised_original/` directory contains the parses and results of the experiment where the **lexicalised** parser was used to parse the entire Sentence 3**. The input to the parser was the entire Sentence 3 (**without** the comma after "result"). This directory also contains the lexicalised `englishFactored.ser.gz` parser model (provided here since it is hard to find a download link of the CoreNLP parser that includes the lexicalised parser online). The file `parser.properties` contains the properties used to run the lexicalised parser. Note that the _unlexicalised_ parser is chosen by default if no properties file is provided.
+The `lexicalised_original/` directory contains the parses and results of the experiment where the **lexicalised** parser was used to parse the entire Sentence 3. The input to the parser was the entire Sentence 3 (**without** the comma after "result").
+- This directory also contains the lexicalised `englishFactored.ser.gz` parser model (provided here since it is hard to find a download link of the CoreNLP parser that includes the lexicalised parser online).
+- The file `parser.properties` contains the properties used to run the lexicalised parser. Note that the _unlexicalised_ parser is chosen by default if no properties file is provided.
