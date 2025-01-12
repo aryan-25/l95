@@ -1,4 +1,4 @@
-This directory contains the results of the experiments performed in Section 5.3 titled "Pre-Processing: PoS Tags".
+This directory contains the results of the experiments performed in Section 4.3 titled "Pre-Processing: PoS Tags".
 
 To run the CoreNLP unlexicalised (`englishPCFG.ser.gz`) constituency parser with predefined PoS tags, use the following command:
 ```bash

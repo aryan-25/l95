@@ -1,3 +1,4 @@
+import os
 from multiprocessing import Process
 from typing import Union
 
@@ -9,7 +10,6 @@ from nltk.draw.util import CanvasFrame  # type: ignore
 from spacy.tokens import Doc
 
 import gold_standard.gold_standard_loader as gold_standard_loader
-from evaluation_tools.evaluation import pyevalb_score
 from parser_loader.constituency.parsers import (
     BerkeleyConstituencyParser,
     BerkeleyNeuralConstituencyParser,
@@ -20,7 +20,7 @@ from parser_loader.dependency.parsers import SpacyDependencyParser
 
 
 def get_sentences() -> list[gold_standard_loader.Sentence]:
-    return gold_standard_loader.parse("gold_standard/gold_standard.txt")
+    return gold_standard_loader.parse("gold_standard/modified_gold_standard.txt")
 
 
 def display_constituency_parses(*parses: list[Tree]):
@@ -33,13 +33,18 @@ def display_constituency_parses(*parses: list[Tree]):
             tree_canvas = TreeWidget(cf.canvas(), tree)
             tree_canvas["node_font"] = "Helvetica 10 bold"
             tree_canvas["leaf_font"] = "Helvetica 10"
-            tree_canvas["line_width"] = 2
-            tree_canvas["xspace"] = 10
+            tree_canvas["line_width"] = 1
+            tree_canvas["xspace"] = 5
             tree_canvas["yspace"] = 10
 
-            cf.add_widget(tree_canvas, (1000 * j) + PADDING, (300 * i) + PADDING)
+            cf.add_widget(tree_canvas, (900 * j) + PADDING, (400 * i) + PADDING)
 
     cf.mainloop()
+
+
+def parse_tree_to_svg(tree: Tree, filename: str) -> None:
+    with open(filename, "w") as f:
+        f.write(tree._repr_svg_())
 
 
 def display_dependency_parses(doc: Union[list[Doc], list[dict]], manual=False, port=8000):
@@ -50,29 +55,44 @@ def constituency_parsers():
     sentences = get_sentences()
 
     coreNLP_parses = CoreNLPConstituencyParser().parse_multiple(sentences)
-    stanza_parses = StanzaConstituencyParser().parse_multiple(sentences)
-    berkeley_parses = BerkeleyConstituencyParser().parse_multiple(sentences)
+    # stanza_parses = StanzaConstituencyParser().parse_multiple(sentences)
+    # berkeley_parses = BerkeleyConstituencyParser().parse_multiple(sentences)
     berkeley_neural_parses = BerkeleyNeuralConstituencyParser().parse_multiple(sentences)
     gold_parses = [sentence.constituency_parse.nltk_tree for sentence in sentences]
 
-    for i in range(len(sentences)):
-        matrix = pyevalb_score(
-            coreNLP_parses[i],
-            stanza_parses[i],
-            berkeley_parses[i],
-            berkeley_neural_parses[i],
-            gold_parses[i],
-        )
+    parses = {
+        "coreNLP": coreNLP_parses,
+        # "stanza": stanza_parses,
+        # "berkeley": berkeley_parses,
+        "benepar": berkeley_neural_parses,
+        "modified_gold": gold_parses,
+    }
 
-        print(sentences[i].text)
-        for row in matrix:
-            print(row)
-        print("\n")
+    for i in range(len(sentences)):
+        for parser, parser_parses in parses.items():
+            if not os.path.exists(f"parser_output/{parser}"):
+                os.makedirs(f"parser_output/{parser}")
+
+            with open(f"parser_output/{parser}/sentence_{i+1}.txt", "w") as f:
+                # print a flat representation of the tree with no newlines
+                f.write(str(parser_parses[i]).replace("\n", ""))
+
+            if not os.path.exists(f"parser_output/evalb_results/sentence_{i + 1}"):
+                os.makedirs(f"parser_output/evalb_results/sentence_{i + 1}")
+
+            if parser == "modified_gold":
+                continue  # to skip evaluation of the gold standard against itself
+
+            evaluation_cmd = f"./evaluation_tools/EVALB/evalb parser_output/modified_gold/sentence_{i + 1}.txt parser_output/{parser}/sentence_{i + 1}.txt > parser_output/evalb_results/sentence_{i + 1}/{parser}_vs_gold.txt"
+            os.system(evaluation_cmd)
+
+        # Use Benepar as the gold standard reference and evaluate CoreNLP against it
+        rel_evaluation_cmd = f"./evaluation_tools/EVALB/evalb parser_output/benepar/sentence_{i + 1}.txt parser_output/coreNLP/sentence_{i + 1}.txt > parser_output/evalb_results/sentence_{i + 1}/coreNLP_vs_benepar.txt"
+
+        os.system(rel_evaluation_cmd)
 
     display_constituency_parses(
         coreNLP_parses,
-        stanza_parses,
-        berkeley_parses,
         berkeley_neural_parses,
         gold_parses,
     )
@@ -86,17 +106,16 @@ def dependency_parsers():
 
     gold_parse_spacy = [gold_parse.spacy_representation() for gold_parse in gold_parses]
 
-    # Display the generated parses in port 8000
+    # Display the generated parses in a localhost webpage running on port 8000
     # Run this in a separate process to avoid blocking the main process
     Process(target=display_dependency_parses, args=(spacy_parses,)).start()
 
-    # Display the gold parses in port 8001
+    # Display the gold-standard parses in a localhost webpage running on port 8001
     display_dependency_parses(gold_parse_spacy, manual=True, port=8001)
 
 
 def main():
-    # constituency_parsers()
-    dependency_parsers()
+    constituency_parsers()
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-This directory contains the results of the experiments performed in Section 5.2 titled "Multi-word Phrases".
+This directory contains the results of the experiments performed in Section 4.2 titled "Multi-word Phrases".
 
 - `unlexicalised_original/coreNLP/` contains two text files that contain the partial parse of the first and second clause of Sentence 3 respectively (_"Prudently, they had diversified into banking and insurance"_ and _"as a result their influence was felt at the greatest level"_).
   - These structures were extracted from the CoreNLP parse generated for the entire Sentence 3.
