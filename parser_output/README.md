@@ -14,7 +14,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_1.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_1.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -32,7 +32,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_2.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_2.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -50,7 +50,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_3.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_3.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -68,7 +68,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_4.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_4.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -86,7 +86,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_5.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_5.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -104,7 +104,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_6.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_6.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -122,7 +122,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_7.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_7.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -140,7 +140,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_8.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_8.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -158,7 +158,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_9.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_9.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
@@ -176,7 +176,7 @@ The images below display the parse tree of the modified gold standard, and the p
         <p>Berkeley Neural Parser</p>
     </div>
     <div style="text-align: center;">
-        <img src="corenlp/tree_drawings/sentence_10.svg" alt="CoreNLP" width="300"/>
+        <img src="coreNLP/tree_drawings/sentence_10.svg" alt="CoreNLP" width="300"/>
         <p>CoreNLP</p>
     </div>
 </div>
