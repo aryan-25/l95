@@ -1,0 +1,1 @@
+(S  (PP (IN With) (NP (DT a) (NN handkerchief)))  (NP (PRP she))  (VP    (VBD wiped)    (NP (DT the) (NN sweat))    (PP (IN from) (NP (PRP$ her) (NN forehead))))  (. .))

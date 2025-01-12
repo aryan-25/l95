@@ -1,0 +1,1 @@
+(S  (NP (DT The) (JJ expected) (NN date))  (VP (VP (VBD came)) (CC and) (VP (VBD went)))  (. .))

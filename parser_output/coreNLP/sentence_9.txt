@@ -1,0 +1,1 @@
+(S  (ADVP (DT All) (PP (IN through) (NP (NNP August))))  (NP (DT the) (NN rain))  (ADVP (RB hardly))  (VP (VBD stopped))  (. .))

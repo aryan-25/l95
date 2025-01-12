@@ -1,0 +1,1 @@
+(S  (NP (NP (DT The) (NN road)) (PP (IN to) (NP (DT the) (NN coast))))  (VP    (VBD was)    (ADJP      (JJ busy)      (PP        (IN with)        (NP          (NP (NN traffic))          (PP (IN in) (NP (DT both) (NNS directions)))))))  (. .))

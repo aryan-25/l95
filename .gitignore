@@ -26,6 +26,7 @@ parser_tools/berkeleyparser/
 parser_tools/stanford-corenlp-4.5.8/
 
 evaluation_tools/bekeley-parser-analyser
+evaluation_tools/EVALB/
 
 .vscode/
 stanford-corenlp-4.5.8/

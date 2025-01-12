@@ -1,0 +1,1 @@
+(S  (SBAR    (WHADVP (WRB When))    (S (PP (IN at) (NP (JJ last))) (NP (PRP she)) (VP (VBD spoke))))  (, ,)  (NP (PRP$ her) (NNS words))  (VP (VBD were) (ADJP (JJ heavy) (CC and) (JJ disjointed)))  (. .))

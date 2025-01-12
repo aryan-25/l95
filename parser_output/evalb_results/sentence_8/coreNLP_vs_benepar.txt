@@ -1,0 +1,35 @@
+  Sent.                        Matched  Bracket   Cross        Correct Tag
+ ID  Len.  Stat. Recal  Prec.  Bracket gold test Bracket Words  Tags Accracy
+============================================================================
+   1   15    0   58.82  62.50    10     17   16      6     15    15   100.00
+============================================================================
+                 58.82  62.50     10    17    16      6     15    15   100.00
+=== Summary ===
+
+-- All --
+Number of sentence        =      1
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =      1
+Bracketing Recall         =  58.82
+Bracketing Precision      =  62.50
+Bracketing FMeasure       =  60.61
+Complete match            =   0.00
+Average crossing          =   6.00
+No crossing               =   0.00
+2 or less crossing        =   0.00
+Tagging accuracy          = 100.00
+
+-- len<=40 --
+Number of sentence        =      1
+Number of Error sentence  =      0
+Number of Skip  sentence  =      0
+Number of Valid sentence  =      1
+Bracketing Recall         =  58.82
+Bracketing Precision      =  62.50
+Bracketing FMeasure       =  60.61
+Complete match            =   0.00
+Average crossing          =   6.00
+No crossing               =   0.00
+2 or less crossing        =   0.00
+Tagging accuracy          = 100.00
