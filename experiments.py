@@ -88,7 +88,7 @@ def constituency_parsers():
 
             gold_evaluation_cmd = f"./evaluation_tools/EVALB/evalb parser_output/original_gold/sentence_{i + 1}.txt parser_output/{parser}/sentence_{i + 1}.txt > parser_output/evalb_results/sentence_{i + 1}/{parser}_vs_original_gold.txt"
             os.system(gold_evaluation_cmd)
-            modified_gold_evaluation_cmd = f"./evaluation_tools/EVALB/evalb parser_output/modified_gold/sentence_{i + 1}.txt parser_output/{parser}/sentence_{i + 1}.txt > parser_output/evalb_results/sentence_{i + 1}/{parser}_vs_modfied_gold.txt"
+            modified_gold_evaluation_cmd = f"./evaluation_tools/EVALB/evalb parser_output/modified_gold/sentence_{i + 1}.txt parser_output/{parser}/sentence_{i + 1}.txt > parser_output/evalb_results/sentence_{i + 1}/{parser}_vs_modified_gold.txt"
             os.system(modified_gold_evaluation_cmd)
 
         # Use Benepar as the gold standard reference and evaluate CoreNLP against it
