@@ -216,7 +216,7 @@ She\she\PRON\PRP	sighed\sigh\VERB\VBD	at\at\ADP\IN	the\the\DET\DT	irony\irony\NO
 
 9. All through August the rain hardly stopped.
 All\all\ADV\RB	through\through\ADP\IN	August\August\PROPN\NNP	the\the\DET\DT	rain\rain\NOUN\NN	hardly\hardly\ADV\RB	stopped\stop\VERB\VBD	.\.\PUNCT\.
-(S (ADVP (NP All)
+(S (PP (NP All)
        (PP through August))
    (NP the rain)
    (VP (ADVP hardly)
